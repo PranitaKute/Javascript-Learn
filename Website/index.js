@@ -357,6 +357,32 @@ console.log(phoneNumber)
 
 
 
+//String Slicing: Creating a substring from a portion of another string
+//string.slice(start, end)
+const fullName = 'Pagal Insaan';
+let firstName = fullName.slice(0,5);
+console.log(`First name is : ${firstName}`);
+
+let lastName = fullName.slice(6,12);
+console.log(`Last name is : ${lastName}`);
+
+console.log(`First Character is : ${fullName.slice(0,1)}`);
+
+console.log(`Last character is : ${fullName.slice(-1)}`);
+
+console.log(`Display first name in dynamic way : ${fullName.slice(0, fullName.indexOf(" "))}`);
+
+console.log(`Display last name in dynamic way: ${fullName.slice(fullName.indexOf(" ") + 1)}`);
+
+
+const email = "pranitakute11@gmail.com";
+let username = email.slice(0, email.indexOf("@"));
+console.log(username);
+let extension = email.slice(email.indexOf("@") + 1);
+console.log(extension);
+
+
+
 
 /*
 let arr = new Array(7, 2, 8, 1, 3, 4);
