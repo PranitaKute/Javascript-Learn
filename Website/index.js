@@ -382,6 +382,74 @@ let extension = email.slice(email.indexOf("@") + 1);
 console.log(extension);
 
 
+//Method Chaining: Calling one method after another in one continuous line of code
+/*let username = window.prompt("Enter Your Username : ");
+
+// --------------No Method Chaining---------------------
+username = username.trim();
+let letter = username.charAt(0);
+letter = letter.toUpperCase();
+let extraChars = username.slice(1);
+extraChars = extraChars.toLowerCase();
+
+username = letter + extraChars;
+console.log(`Without Method Chaining ${username}`);
+
+// -----------------Method Chaining-----------------------
+username = username.trim().charAt(0).toUpperCase() + username.slice(1).toLowerCase();
+console.log(`Method Chaining : ${username}`);   */
+
+
+//Logical Operator: Used to combine or manipulate boolean values (true or false)
+// AND: &&  OR : ||  NOT : !
+/*const temp = 25;
+if(temp <= 0 || temp > 30){
+    console.log("Weather is bad!");
+}
+else{
+    console.log("Weather is good!");
+}
+
+const isSunny = true;
+if(!isSunny){
+    console.log("It is Cloudy!");
+}
+else{
+    console.log("It is Sunny!");
+}   */
+
+
+/*  = assignment operator
+    == comparision operator (compare if values are equal)
+    === strict equality operator (compare if values & datatype are equal)
+    != inequality operator
+    !== strict inequality operator      */
+/*
+const PI = 3.14;
+if(PI === 3.14){
+    console.log("That is Pi!");
+}
+else{
+    console.log("That is not PI!");
+}
+
+if(PI !== "3.14"){
+    console.log("That is not Pi!");
+}
+else{
+    console.log("That is PI!");
+}   */
+
+
+//While loop: Repeat some code while some condition is true
+let username = "";
+while(username === ""){
+    console.log("You didn't enter your name");
+}
+console.log(`Hello ${username}`);
+
+
+
 
 
 /*
