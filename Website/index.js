@@ -20,7 +20,7 @@
     Declaration - let x
     Assignment - x = 100    */
 
-/*et age;
+et age;
 age = 19;
 console.log(`You are ${age} years old!`);
 console.log(typeof age);
@@ -40,16 +40,16 @@ console.log(typeof cgpa);
 let online = true;
 console.log(typeof online);
 console.log(`Jack is Online : ${online}`);
-*/
 
-/*let fullName = "Caleb Curry";
+
+let fullName = "Caleb Curry";
 let age = 25;
 let address = "USA";
 
 document.getElementById("p1").textContent = `Your Name id ${fullName}!`;
 document.getElementById("p2").textContent = `You are ${age} years old.`;
 document.getElementById("p3").textContent = `You live in ${address}.`;
-*/
+
 
 
 /* Arithmetic operators
@@ -102,7 +102,7 @@ document.getElementById("mySubmit").onclick = function(){
 
 /*Type Conversion
 Change the datatype of a value to another (string, number, boolean) */
-/*let age = window.prompt("How old are you?");
+let age = window.prompt("How old are you?");
 age = Number(age);
 age+=1;
 console.log(age, typeof age);
@@ -119,10 +119,10 @@ z = Boolean(z);
 console.log(x, typeof x);       //NaN = Not A Number
 console.log(y, typeof y);
 console.log(z, typeof z);
-*/
+
 
 //Constants: A variable can't be changed once you assign them
-/*const PI = 3.14159;    //
+const PI = 3.14159;    //
 let radius;
 let circumference;
 
@@ -132,13 +132,12 @@ radius = Number(radius);
 circumference = 2 * PI * radius;
 document.getElementById("ans").textContent = `Circumference is : ${circumference}`+"cm";
 }
-*/
 
 
 //Math: Built-in object that provides a collection of properties & methods
 //console.log(Math.PI);
 //console.log(Math.E);    //Eulers number
-/*
+
 let a = 3;
 let b = -30
 let x = 3.99;
@@ -160,29 +159,29 @@ console.log(z);
 let max = Math.max(a,b,y);
 console.log(max);
 let min = Math.min(a,b,y);
-console.log(min);   */
+console.log(min);   
 
 
 //If Statement: If a condition is true, execute the same code. If not, do something else
-/*let age = 14;
+let age = 14;
 if(age >= 18){
     console.log("You are old enough to enter this site!");
 }
 else{
     console.log("You must be 18+ to enter this site!");
-}   */
+}
 
-/* let isStudent = false;
+let isStudent = false;
 if(isStudent){
     console.log(`You are a Student!`);
 }
 else{
     console.log("You are NOT a Student!");
-}   */
+}
 
 
 //checked: property that determines the checked state of html checkbox or radio button element
-/*
+
 let mytext = document.getElementById("mytext");
 const mycheckbox = document.getElementById("mycheckbox");
 let termscondition = document.getElementById("termscondition");
@@ -228,7 +227,6 @@ else{
 
 //let age = 0;
 //let hasLicense = false;
-*/
 
 
 /*
@@ -259,7 +257,7 @@ console.log(`Your total is $${purchaseamt - purchaseamt * (discount/100)}`);
 
 
 //Switch: It is an efficient replacement to many else if statements
-/*let day = 3;
+let day = 3;
 switch(day){
     case 1:
         console.log("Monday");
@@ -310,11 +308,11 @@ switch(true){
         grade = 'F';
 }
 console.log(grade);
-*/
+
 
 
 //String methods: Allows to manipulate and work with text(strings)
-/*let username = '  BroCode   ';
+let username = '  BroCode   ';
 console.log(username.charAt(0));    //gives letter at specified position
 console.log(username.indexOf('e'));  //it will return the index of first occurrence of the character
 console.log(username.lastIndexOf('o'));
@@ -353,13 +351,13 @@ let phoneNumber = '844-699-2311';
 phoneNumber = phoneNumber.replaceAll("-"," ")   //replaces specified character
 console.log(phoneNumber);
 phoneNumber = phoneNumber.padStart(15,"0");     //adds given character to achieve given length
-console.log(phoneNumber)    */
+console.log(phoneNumber)    
 
 
 
 //String Slicing: Creating a substring from a portion of another string
 //string.slice(start, end)
-/*    const fullName = 'Pagal Insaan';
+const fullName = 'Pagal Insaan';
 let firstName = fullName.slice(0,5);
 console.log(`First name is : ${firstName}`);
 
@@ -379,11 +377,11 @@ const email = "pranitakute11@gmail.com";
 let username = email.slice(0, email.indexOf("@"));
 console.log(username);
 let extension = email.slice(email.indexOf("@") + 1);
-console.log(extension);    */
+console.log(extension);
 
 
 //Method Chaining: Calling one method after another in one continuous line of code
-/*let username = window.prompt("Enter Your Username : ");
+let username = window.prompt("Enter Your Username : ");
 
 // --------------No Method Chaining---------------------
 username = username.trim();
@@ -397,12 +395,12 @@ console.log(`Without Method Chaining ${username}`);
 
 // -----------------Method Chaining-----------------------
 username = username.trim().charAt(0).toUpperCase() + username.slice(1).toLowerCase();
-console.log(`Method Chaining : ${username}`);   */
+console.log(`Method Chaining : ${username}`);
 
 
 //Logical Operator: Used to combine or manipulate boolean values (true or false)
 // AND: &&  OR : ||  NOT : !
-/*const temp = 25;
+const temp = 25;
 if(temp <= 0 || temp > 30){
     console.log("Weather is bad!");
 }
@@ -416,7 +414,7 @@ if(!isSunny){
 }
 else{
     console.log("It is Sunny!");
-}   */
+}
 
 
 /*  = assignment operator
@@ -424,7 +422,7 @@ else{
     === strict equality operator (compare if values & datatype are equal)
     != inequality operator
     !== strict inequality operator      */
-/*
+
 const PI = 3.14;
 if(PI === 3.14){
     console.log("That is Pi!");
@@ -438,11 +436,11 @@ if(PI !== "3.14"){
 }
 else{
     console.log("That is PI!");
-}   */
+}  
 
 
 //While loop: Repeat some code while some condition is true
-/*    let username = "";
+let username = "";
 while(username === ""){
     console.log("You didn't enter your name");
 }
@@ -468,8 +466,24 @@ do{
         console.log("Invalid Credentials! Please try again..");
     }
 }while(!loggedIn)
-*/
 
+
+//For loop : Repeat some code a LIMITED amount of times
+//for (temp counter, condition, increment/decrement)
+for(let i = 10; i >= 1; i--){
+    console.log(i);
+}
+console.log("Happy new year!!....");
+
+for(let i = 1; i <= 20; i++){
+    if(i == 13){
+        continue;   //skips this iteration
+    }
+    if(i == 19){
+        break;  //exit the loop entirely
+    }
+    console.log(i);
+}
 
 
 
