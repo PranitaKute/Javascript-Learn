@@ -314,7 +314,7 @@ console.log(grade);
 
 
 //String methods: Allows to manipulate and work with text(strings)
-let username = '  BroCode   ';
+/*let username = '  BroCode   ';
 console.log(username.charAt(0));    //gives letter at specified position
 console.log(username.indexOf('e'));  //it will return the index of first occurrence of the character
 console.log(username.lastIndexOf('o'));
@@ -353,13 +353,13 @@ let phoneNumber = '844-699-2311';
 phoneNumber = phoneNumber.replaceAll("-"," ")   //replaces specified character
 console.log(phoneNumber);
 phoneNumber = phoneNumber.padStart(15,"0");     //adds given character to achieve given length
-console.log(phoneNumber)
+console.log(phoneNumber)    */
 
 
 
 //String Slicing: Creating a substring from a portion of another string
 //string.slice(start, end)
-const fullName = 'Pagal Insaan';
+/*    const fullName = 'Pagal Insaan';
 let firstName = fullName.slice(0,5);
 console.log(`First name is : ${firstName}`);
 
@@ -379,7 +379,7 @@ const email = "pranitakute11@gmail.com";
 let username = email.slice(0, email.indexOf("@"));
 console.log(username);
 let extension = email.slice(email.indexOf("@") + 1);
-console.log(extension);
+console.log(extension);    */
 
 
 //Method Chaining: Calling one method after another in one continuous line of code
@@ -442,11 +442,34 @@ else{
 
 
 //While loop: Repeat some code while some condition is true
-let username = "";
+/*    let username = "";
 while(username === ""){
     console.log("You didn't enter your name");
 }
 console.log(`Hello ${username}`);
+
+let username = "";
+do{
+    username = window.prompt(`Enter Your Name : `);
+}while(username === "" || username === null)    
+console.log(`Hello ${username}`);
+
+let loggedIn = false;
+let uname;
+let password;
+do{
+    uname = window.prompt("Enter your username ");
+    password = window.prompt("Enter your password ");
+    if(uname === "myusername" && password === "1234"){
+        loggedIn = true;
+        console.log("Welcome!");
+    }
+    else{
+        console.log("Invalid Credentials! Please try again..");
+    }
+}while(!loggedIn)
+*/
+
 
 
 
