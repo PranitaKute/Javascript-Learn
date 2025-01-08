@@ -229,7 +229,7 @@ else{
 //let hasLicense = false;
 
 
-/*
+
 //ternary operator: a shortcut to if() & else() statements helps to assign a variable based on condition 
 //condition ? codeiftrue : codeiffalse;
 let res = document.getElementById("res");
@@ -253,7 +253,7 @@ console.log(greeting);
 let purchaseamt = 125;
 let discount = purchaseamt >= 100 ? 10 : 0;
 console.log(`Your total is $${purchaseamt - purchaseamt * (discount/100)}`);
-*/
+
 
 
 //Switch: It is an efficient replacement to many else if statements
@@ -487,9 +487,6 @@ for(let i = 1; i <= 20; i++){
 
 
 
-
-
-/*
 let arr = new Array(7, 2, 8, 1, 3, 4);
 let i, j, temp;
 document.write("<br> Before Sorting... <br>");
@@ -508,4 +505,8 @@ for(i = 0; i < 6; i++){
 document.write("<br> <br> After Sorting... <br>");
 for(i = 0; i < 6; i++){
     document.write(arr[i] + "<br>");
-}   */
+}   
+
+
+
+
