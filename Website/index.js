@@ -553,6 +553,24 @@ console.log(validEmail("pranita@fakegmail.com"))
 console.log(validEmail("elonmusk.com"))
 
 
+//Variable scope : Where a variable is recognised & accessible (local vs global)
+//we can't declare variable with same name within same scope
+//you can reuse the same variable as long as they are within different scope 
+let y = 12;     //Global variable
+function funct1(){
+    let x = 5;      //local variable
+    console.log(` Value of x in function 1: ${x}`);
+    console.log(` Global variable y inside function 1: ${y}`);
+    
+}
+function funct2(){
+    let x = 10;     //local variable
+    console.log(`Value of x in function 2: ${x}`);
+}
+funct1();
+funct2();
+console.log(`Global variable y out side a function: ${y}`); 
+
 
 let arr = new Array(7, 2, 8, 1, 3, 4);
 let i, j, temp;
