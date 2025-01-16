@@ -486,6 +486,73 @@ for(let i = 1; i <= 20; i++){
 }
 
 
+//Function: A section of reusable code
+//  Declare code once, and use it whenever you want.
+//  Call the function to execute that code
+
+//username = window.prompt("What is your name?")
+//age = window.prompt("How old have you turned today?")
+
+function happyBirthday(username, age){
+    console.log("Happy Birthday to you");
+    console.log("Happy Birthday to you");
+    console.log(`Happy Birthday to dear ${username}`);
+    console.log("Happy Birthday to you");
+    console.log("May god bless you");
+    console.log("May god bless you");
+    console.log(`Happy Birthday to dear ${username}`);
+    console.log("Happy Birthday to you");
+    console.log(`You are ${age} years old!`)
+}
+
+happyBirthday("Pranita", 19);           //arguments
+console.log("---------------------------------------------------------")
+happyBirthday("Shinchan", 5);
+
+function add(x,y){
+    return  x + y;
+}
+function sub(x,y){
+    return  x - y;
+}
+function mul(x,y){
+    return  x * y;
+}
+function div(x,y){
+    return  x / y;
+}
+//let ans = add(4,5);
+console.log(add(4,5));
+console.log(sub(4,5));
+console.log(mul(4,5));
+console.log(div(4,5));
+
+function evenodd(x){
+    /*if(x % 2 === 0){
+        return true;
+    }
+    else{
+        return false;
+    }   */
+
+    return x % 2 === 0 ? true : false
+}
+console.log(evenodd(11));
+
+function validEmail(emailid){
+    /*if(emailid.includes('@')){
+        return true;
+    }
+    else{
+        return false;
+    }   */
+
+    return emailid.includes('@') ? true : false;
+}
+console.log(validEmail("pranita@fakegmail.com"))
+console.log(validEmail("elonmusk.com"))
+
+
 
 let arr = new Array(7, 2, 8, 1, 3, 4);
 let i, j, temp;
