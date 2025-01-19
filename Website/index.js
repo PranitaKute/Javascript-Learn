@@ -572,6 +572,34 @@ funct2();
 console.log(`Global variable y out side a function: ${y}`); 
 
 
+//Array : A variable like structure that can hold more than 1 value
+let fruits = ["orange", "apple", "banana"];
+console.log(fruits);
+fruits[2] = "coconut";
+console.log(fruits[2]);
+fruits[4] = "strawberry";
+fruits.push("Grapes");
+console.log(fruits);
+fruits.pop();
+console.log(fruits);
+fruits.unshift("Mango");      //add element at the beginning
+console.log(fruits);
+fruits.shift();     //removes from beginning
+console.log(fruits);
+let arrLength = fruits.length;
+console.log(arrLength);
+let index = fruits.indexOf("apple");
+console.log(index);
+for(i = fruits.length - 1; i >= 0; i--){
+    console.log(fruits[i]);
+}
+fruits.sort();      //sorts in alphabetical order
+//fruits.sort().reverse();
+//advanced for loop
+for(let fruit of fruits){
+    console.log(fruit);
+}
+
 let arr = new Array(7, 2, 8, 1, 3, 4);
 let i, j, temp;
 document.write("<br> Before Sorting... <br>");
@@ -590,8 +618,7 @@ for(i = 0; i < 6; i++){
 document.write("<br> <br> After Sorting... <br>");
 for(i = 0; i < 6; i++){
     document.write(arr[i] + "<br>");
-}   
-
+}
 
 
 
