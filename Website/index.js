@@ -641,3 +641,47 @@ console.log(new_fruits);
 let vegetables = ["Potato", "Brinjal", "Cabbage", "Tomato"];
 let food = [...fruits,...vegetables, "eggs", "milk"];
 console.log(food);
+
+
+//Rest parameters : (...rest) allow a function work with a variable number of arguments by bundling them into an array
+// spread - expands an array into separate elements
+// rest - bundles separate elements into an array
+function openFridge(...foods){
+    console.log(...foods);
+}
+function getFood(...foods){
+    return foods;
+}
+const food1 = "Pizza"
+const food2 = "Burger"
+const food3 = "Sushi"
+const food4 = "Noodles"
+openFridge(food1, food2, food3, food4, "Ramen");
+const foods = getFood(food1,food2,food3,food4);
+console.log(foods);
+
+function sum(...numbers){
+    let result = 0;
+    for(let number of numbers){
+        result += number;
+    }
+    return result;
+}
+const total = sum(1,2,5,3,8,6);
+console.log(`Your total is $${total}`);
+
+function getAverage(...numbers){
+    let result = 0;
+    for(let number of numbers){
+        result += number;
+    }
+    return result / numbers.length;
+}
+const total2 = getAverage(86,92,85,76,82);
+console.log(`Average : ${total2}`);
+
+function combineString(...strings){
+    return strings.join(" ");
+}
+const fullname = combineString("Mr.", "Spongebob", "Squarepants", "III");
+console.log(fullname);
