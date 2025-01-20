@@ -621,4 +621,23 @@ for(i = 0; i < 6; i++){
 }
 
 
+//Spread Operator (...) : Allows an iterable such as an array or a string to be expanded into separate elements (Unpack the elements)
+let numbers = [1,2,3,4,5];
+let maximum = Math.max(...numbers);
+let minimum = Math.min(...numbers);
+console.log(numbers);
+console.log(maximum);
+console.log(minimum);
 
+let username = "Pranita Kute";
+let letters = [...username].join("-");
+console.log(letters);
+
+let fruits = ["orange", "apple", "banana"];
+let new_fruits = [...fruits];
+console.log(fruits);
+console.log(new_fruits);
+
+let vegetables = ["Potato", "Brinjal", "Cabbage", "Tomato"];
+let food = [...fruits,...vegetables, "eggs", "milk"];
+console.log(food);
