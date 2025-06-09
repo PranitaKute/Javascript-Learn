@@ -685,3 +685,57 @@ function combineString(...strings){
 }
 const fullname = combineString("Mr.", "Spongebob", "Squarepants", "III");
 console.log(fullname);
+
+
+
+/*CallBack : A function that is passed as an argument to another function.
+used to handle asynchronous operations:
+1. Reading a file
+2. Network requests
+3. Interacting with databases
+
+"Hey, when you are done, call this next*/
+/*
+hello();
+goodbye();
+
+function hello(){
+    setTimeout(function(){
+    console.log("Hello");
+}, 3000);
+}
+
+function goodbye(){
+    console.log("Goodbye");
+}
+**/
+//Example 1
+hello(wait);
+function hello(callback){
+    console.log("Hello!");
+    callback();
+}
+function wait(){
+    console.log("Wait");
+}
+function leave(){
+    console.log("Leave");   
+}
+function goodbye(){
+    console.log("Goodbye!");
+}
+
+//Example 2
+sum(displayPage,5,6)
+function sum(callback, x, y){
+    result = x + y;
+    callback(result);
+}
+function displayConsole(){
+    console.log("Sum : ",result);
+}
+
+function displayPage(result){
+    document.getElementById('myH1').textContent = result
+}
+
