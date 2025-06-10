@@ -880,3 +880,78 @@ function getMin(previous, next){
     return Math.min(previous, next);
 }
 
+
+/*function declaration : Define a reusable block of code that performs
+a specific task 
+function hello(){
+    console.log("Hello!");
+}*/
+function hello(){
+    console.log("Hello!");
+}
+
+/* function expression : A way to define function as values or variables */
+
+setTimeout(function(){
+    console.log("Hello!");
+}, 3000);
+
+const numbers = [1,2,3,4,5,6];
+const squares = numbers.map(function (element){
+    return Math.pow(element,2);
+});
+console.log(squares);
+
+const cubes = numbers.map(function (element){
+    return Math.pow(element,3);
+})
+console.log(cubes);
+
+const evenNumbers = numbers.filter(function (element){
+    return element % 2 === 0;
+})
+console.log(evenNumbers);
+
+const oddNumbers = numbers.filter(function (element){
+    return element % 2 !== 0;
+})
+console.log(oddNumbers);
+
+const total = numbers.reduce(function (accumulator,element){
+    return accumulator + element;
+})
+console.log(total);
+
+
+/*arrow function: A concise way to write function expression good for
+simple function that you use only once
+(parameter) => some code */
+hello();
+function hello(){
+    console.log("Hello");
+}
+
+const hey = function(){
+    console.log("Hey!");
+}
+hey();
+
+const bonjour = (name,age) => {
+    console.log(`Bonjour, ${name}!!`);
+    console.log(`You're ${age} years old!`);
+}
+bonjour("John","20");
+
+setTimeout( () => console.log("Hi"), 5000);
+
+const numberss = [1,2,3,4,5,6];
+const square = numberss.map((elements) => Math.pow(elements,2));
+console.log(square);
+const cube = numberss.map((elements) => Math.pow(elements,3));
+console.log(cube);
+const even = numberss.filter((elements) => elements % 2 === 0);
+console.log(even);
+const odd = numberss.filter((elements) => elements % 2 !== 0);
+console.log(odd);
+const tol = numberss.reduce((accumulator,elements) => accumulator + elements);
+console.log(tol);
