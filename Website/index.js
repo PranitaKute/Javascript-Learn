@@ -955,3 +955,63 @@ const odd = numberss.filter((elements) => elements % 2 !== 0);
 console.log(odd);
 const tol = numberss.reduce((accumulator,elements) => accumulator + elements);
 console.log(tol);
+
+
+/*object: A collection of related properties and/or methods can represent real
+world objects (people, product, places)
+object = {key : value, function()}*/
+const person1 = {
+    firstname : "Spongebob",
+    lastname : "Squarepants",
+    age : 30,
+    isEmployed : true,
+    sayHello : function(){console.log("Hi, I'm Spongebob!")},
+    eat : function(){console.log("I'm eating a Krabby Patty")},
+}
+const person2 = {
+    firstname : "Patrick",
+    lastname : "Star",
+    age : 42,
+    isEmployed : false,
+    sayHello : () => console.log("Hey, I'm Patrick..."),
+    eat : () => console.log("I'm eating chicken & pizza"),
+}
+console.log(person1.firstname);
+console.log(person1.lastname);
+console.log(person1.age);
+console.log(person1.isEmployed);
+
+console.log(person2.firstname);
+console.log(person2.lastname);
+console.log(person2.age);
+console.log(person2.isEmployed);
+
+person1.sayHello();
+person2.sayHello();
+person1.eat();
+person2.eat();
+
+
+/* this : reference to there object where THIS is used (the object depends on 
+the immediate context)
+person.name = this.name
+*/
+const person = {
+    name : "Spongebob",
+    favfood : 'Hamburgers',
+    sayHello : function(){console.log(`Hi, I'm ! ${this.name}`)},
+    eat : function(){console.log(`${this.name} is eating ${this.favfood}`)},
+}
+const person2 = {
+    name : "Patrick",
+    favfood : 'Pizza',
+    sayHello : function(){console.log(`Hi, I'm ! ${this.name}`)},
+    eat : function(){console.log(`${this.name} is eating ${this.favfood}`)},
+    // eat : () => console.log(`${this.name} is eating ${this.favfood}`),
+    // this doesn't work with arrow function, it makes reference with window object
+}
+person.sayHello();
+person.eat();
+person2.eat();
+
+// console.log(this);
