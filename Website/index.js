@@ -1133,3 +1133,106 @@ user3.sayHello();
 
 Users.getUserCount();
 
+
+/*inheritance : allows a new class to inherit properties and 
+methods from an existing class (parent -> child) helps with 
+code reusability
+DRY principle : Don't Repeat Yourself*/
+class Animal{
+    alive = true;
+    eat(){
+        console.log(`This ${this.name} is eating`);
+    }
+    sleep(){
+        console.log(`This ${this.name} is sleeping`);
+    }
+}
+class Rabbit extends Animal{
+    name = "rabbit";
+    run(){
+        console.log(`${this.name} is running`);
+    }
+}
+class Fish extends Animal{
+    name = "fish";
+    swim(){
+        console.log(`${this.name} is swimming`);
+    }
+}
+class Hawk extends Animal{
+    name = "hawk";
+    fly(){
+        console.log(`${this.name} is flying`);
+    }
+}
+const rabbit = new Rabbit();
+const fish = new Fish();
+const hawk = new Hawk();
+rabbit.alive = false;
+console.log(rabbit.alive);
+rabbit.eat();
+rabbit.sleep();
+fish.eat();
+hawk.sleep();
+rabbit.run();
+fish.sleep();
+hawk.fly();
+
+
+/*super : keyword is used in classes to call the constructor
+or access the properties of the parent (super classs) */
+class Animal{
+    constructor(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    move(speed){
+        console.log(`The ${this.name} moves at a speed of ${speed} mph`)
+    }
+}
+class Rabbit extends Animal{
+    constructor(name, age, runspeed){
+        super(name,age);
+        this.runspeed = runspeed;
+    }
+    run(){
+        console.log(`This ${this.name} can run`);
+        super.move(this.runspeed);
+    }
+}
+class Fish extends Animal{
+    constructor(name, age, swimspeed){
+        super(name,age);
+        this.swimspeed = swimspeed;
+    }
+    swim(){
+        console.log(`This ${this.name} can swim`);
+        super.move(this.swimspeed);
+    }
+}
+class Hawk extends Animal{
+    constructor(name, age, flyspeed){
+        super(name,age);
+        this.flyspeed = flyspeed;
+    }
+    fly(){
+        console.log(`This ${this.name} can fly`);
+        super.move(this.flyspeed);
+    }
+}
+const rabbit = new Rabbit("Rabbit", 1, 25);
+const fish = new Fish("fish", 2, 12);
+const hawk = new Hawk("Hawk", 3, 15);
+console.log(rabbit.name);
+console.log(rabbit.age);
+console.log(rabbit.runspeed);
+console.log(fish.name);
+console.log(fish.age);
+console.log(fish.swimspeed);
+console.log(hawk.name);
+console.log(hawk.age);
+console.log(hawk.flyspeed);
+rabbit.run();
+fish.swim();
+hawk.fly();
+
