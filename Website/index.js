@@ -1015,3 +1015,71 @@ person.eat();
 person2.eat();
 
 // console.log(this);
+
+
+/*constructor : Special method for defining the properties and methods 
+of objects*/
+function Car(make, model, year, color){
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.color = color;
+    this.drive = function(){
+        console.log(`Yor drive ${this.model}`)
+    }
+}
+
+const car1 = new Car("Ford", "Mustang", 2024, "red");
+console.log("Car 1 Properties:")
+console.log(car1.make);
+console.log(car1.model);
+console.log(car1.year);
+console.log(car1.color);
+car1.drive();
+
+const car2 = new Car("Chevrolet", "Canaro", 2025, "blue");
+console.log("Car 2 Properties:")
+console.log(car2.make);
+console.log(car2.model);
+console.log(car2.year);
+console.log(car2.color);
+car2.drive();
+
+const car3 = new Car("Dodge", "Charger", 2026, "Silver");
+console.log("Car 3 Properties:")
+console.log(car3.make);
+console.log(car3.model);
+console.log(car3.year);
+console.log(car3.color);
+car2.drive();
+
+
+/*classes : (ES6 feature) provides a more structured and cleaner way to
+work with object, compared to traditional constructor functions.
+ex. - static keyword, encapsulation, inheritance*/
+class Products{
+    constructor(name, price){
+        this.name = name;
+        this.price = price;
+    }
+    displayProduct(){
+        console.log(`Product name : ${this.name}`);
+        console.log(`Price : $${this.price.toFixed(2)}`);
+    }
+    calculateTotal(salestax){
+        return this.price + this.price*salestax;
+    }
+}
+const salestax = 0.05;
+const product1 = new Products("Shirt",19.99);
+const product2 = new Products("Pants", 22.50);
+const product3 = new Products("Scarf", 10.25)
+product1.displayProduct();
+const total1 = product1.calculateTotal(salestax);
+console.log(`Total Price (with tax): $${total1}`);
+product2.displayProduct();
+const total2 = product2.calculateTotal(salestax);
+console.log(`Total Price (with tax): $${total2}`);
+product3.displayProduct();
+const total3 = product3.calculateTotal(salestax);
+console.log(`Total Price (with tax): $${total3}`);
