@@ -1327,3 +1327,115 @@ console.log(person1.firstname);
 console.log(person1.lastname);
 console.log(person1.fullname);
 console.log(person1.age);
+
+
+/*Destructuring : Extract values from arrays and objects, then assign them 
+to variables in a convinent way
+[] - to perform array destructuring
+{} - to perform object destructuring*/
+//Example 1 - Swap the values of two variables
+let a = 1;
+let b = 2;
+
+[a,b] = [b,a]
+
+console.log(a);
+console.log(b);
+// We can use destructuring to swap values
+
+// Example 2 - Elements in an array
+const colors = ["red","green","blue","black","yellow"];
+[colors[0], colors[4]] = [colors[4],colors[0]];
+console.log(colors);
+
+// Example 3 - Assign array elements to variables
+const [firstColor, secondColor, thirdColor, ...extraColors] = colors; //... rest parameter
+console.log(firstColor);
+console.log(secondColor);
+console.log(thirdColor);
+console.log(extraColors);
+
+// Example 4 - Extract values from objects
+const man1 = {
+    firstName: "Spongebob",
+    lastName: "Squarepants",
+    age: 38,
+    job: "Fry Cook",
+}
+
+const man2 = {
+    firstName: "Patrick",
+    lastName: "Star",
+    age: 34,
+}
+
+const {firstName, lastName, age, job="unemployed"} = man1;
+console.log(firstName);
+console.log(lastName);
+console.log(age);
+console.log(job);
+
+// Example 5 - Destructure in function parameter
+function displayMan({firstName, lastName, age, job="Unemployed"}){
+    console.log(`Name: ${firstName} ${lastName}`);
+    console.log(`Age: ${age}`);
+    console.log(`Job: ${job}`);
+}
+displayMan(man1);
+displayMan(man2);
+
+
+/* Nested Objects : Object inside objects
+Allows to represent more complex data structures 
+Child object is enclosed by a parent object
+
+Person{Address{}, contactInfo{}}
+ShoppingCart{Keyboard{}, Mouse{}, Monitor{}}*/
+
+const person = {
+    fullName: "Spongebob Squarepants",
+    age:30,
+    isStudent: true,
+    hobbies: ["Karate", "Jellyfishing", "cooking"],
+    address: {
+        street: "124 Conch St.",
+        city: "pepper",
+        country: "Int. Water"
+    }
+}
+console.log(person.fullName);
+console.log(person.age);
+console.log(person.isStudent);
+console.log(person.hobbies[2]);
+console.log(person.address.country);
+for(const property in person.address){
+    console.log(person.address[property])
+}
+
+class Per{
+    constructor(name, age, ...address){
+        this.name = name;
+        this.age = age;
+        this.address = new Address(...address);
+    }
+}
+class Address{
+    constructor(street, city, country){
+        this.street = street;
+        this.city = city;
+        this.country = country;
+    }
+}
+
+const per1 = new Per("Spongebob", 38, "124 Counch St.", 
+                                        "Pepper", 
+                                        "Int. Water")
+const per2 = new Per("Patrick", 32, "128 Counch St.", 
+                                        "Pepper", 
+                                        "Int. Water")
+const per3 = new Per("Squidward", 45, "126 Counch St.", 
+                                        "Pepper", 
+                                        "Int. Water")
+console.log(per1.name);
+console.log(per2.age);
+console.log(per3.address);
