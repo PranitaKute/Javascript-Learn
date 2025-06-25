@@ -1439,3 +1439,119 @@ const per3 = new Per("Squidward", 45, "126 Counch St.",
 console.log(per1.name);
 console.log(per2.age);
 console.log(per3.address);
+
+
+// Array of Objects
+const fruits = [{name: "apple", color:"red", calories: 95}, 
+                {name: "orange", color:"orange", calories: 45},
+                {name: "banana", color:"yellow", calories: 105},
+                {name: "coconut", color:"white", calories: 159},
+                {name: "pineapple", color:"yellow", calories: 37}];
+console.log(fruits[0].name);
+console.log(fruits[2].color);
+fruits.push({name: "grapes", color:"green", calories: 62});
+fruits.pop();
+console.log(fruits);
+// foreach
+fruits.forEach(fruit => console.log(fruit.name));
+fruits.forEach(fruit => console.log(fruit.calories));
+// map
+const fruitName = fruits.map(fruit => fruit.name);
+console.log(fruitName);
+const fruitColor = fruits.map(fruit => fruit.color);
+console.log(fruitColor);
+const fruitCalories = fruits.map(fruit => fruit.calories);
+console.log(fruitCalories);
+// filter
+const yellowFruit = fruits.filter(fruit => fruit.color === "yellow");
+console.log(yellowFruit);
+const lowCalFruit = fruits.filter(fruit => fruit.calories < 100);
+console.log(lowCalFruit);
+const highCalFruit = fruits.filter(fruit => fruit.calories >= 100);
+console.log(highCalFruit);
+// reduce
+const maxFruit = fruits.reduce((max, fruit) => 
+                                fruit.calories > max.calories ? 
+                                fruit : max);
+console.log(maxFruit);
+const minFruit = fruits.reduce((min, fruit) => 
+                                fruit.calories < min.calories ? 
+                                fruit : min);
+console.log(minFruit);
+
+
+/*sort() - Method used to sort elements of an array in place.
+Sorts elements as strings in lexicographic order, not alphabetical 
+lexicographic = (alphabet + numbers + symbols) as strings*/
+let Fruits = ["apple", "orange", "banana", "coconut", "pineapple"];
+Fruits.sort();
+console.log(Fruits);
+let nums = [23, 46, 9, 81, 44, 12, 4];
+nums.sort();
+console.log(nums); // lexicographic sorting
+nums.sort((a, b) => a - b);
+console.log(nums);
+
+const peoples = [{name : "Spongebob", age : 38, gpa : 3.0}, 
+                {name : "Henry", age : 15, gpa : 1.5}, 
+                {name : "Patrick", age : 32, gpa : 4.0}, 
+                {name : "Petter", age : 12, gpa : 4.8}]
+peoples.sort((a, b) => b.name - a.name);
+console.log(peoples);
+// reverse
+peoples.sort((a, b) => b.name.localeCompare(a.name));
+console.log(peoples);
+
+
+// Shuffle elements of an array
+const cards = ['A', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
+// cards.sort(() => Math.random() - 0.5);
+shuffle(cards);
+console.log(cards);
+function shuffle(array) {
+    for(let i = array.length - 1; i > 0; i--){
+        const random = Math.floor(Math.random() * (i + 1));
+
+        [array[i], array[random]] = [array[random], array[i]];
+    }
+}
+
+
+// Date Object - Objects that contain values that represent dates and
+// times. These date objects can be changed and formated
+// Date(year, month, day, hour, minute, second, ms)
+const date = new Date();
+// const date = new Date("2024-01-02T12:00:00Z");
+// const date = new Date(0);
+// 0 means Jan, 1 means feb, and so on..
+console.log(date);
+const year = date.getFullYear();
+console.log(year);
+const month = date.getMonth();
+console.log(month);
+const day = date.getDate();
+console.log(day);
+const hours = date.getHours();
+console.log(hours);
+const min = date.getMinutes();
+console.log(min);
+const sec = date.getSeconds();
+console.log(sec);
+const ms = date.getMilliseconds();
+console.log(ms);
+const dayOfWeek = date.getDay();
+console.log(dayOfWeek);
+
+date.setFullYear(2024);
+date.setMonth(0);
+date.setDate(1);
+date.setHours(2);
+date.setMinutes(3);
+date.setSeconds(4);
+console.log(date);
+
+const date1 = new Date("2023-12-31");
+const date2 = new Date("2024-01-01");
+if (date2 > date1) {
+    console.log("Happy New Year!")
+}
