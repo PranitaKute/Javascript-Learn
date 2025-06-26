@@ -1555,3 +1555,87 @@ const date2 = new Date("2024-01-01");
 if (date2 > date1) {
     console.log("Happy New Year!")
 }
+
+
+/*Closure - A function defined inside of another function, the inner 
+function has access to the variables and scope of the outer function.
+Allow for private variables and state maintenance used frequently in JS
+frameworks : React, Vue, Angular */
+function outer(){
+    let message = "Hello";
+    function inner(){
+        console.log(message);
+    }
+    inner();
+}
+outer();
+
+function createCounter(){
+    let count = 0;
+    function increment(){
+        // let count = 0;
+        count++;
+        console.log(`Count increased to ${count}`);
+    }
+    function getCount(){
+        return count;
+    }
+    return {increment, getCount};
+}
+
+const counter = createCounter();
+counter.increment();
+counter.increment();
+console.log(`The current count is ${counter.getCount()}`);
+// counter.count = 0;
+// console.log(count);
+// console.log(counter.count);
+
+// Example 2
+function createGame(){
+    let score = 0;
+    function increaseScore(points){
+        score += points;
+        console.log(`+${points} pts`);
+    }
+    function decreaseScore(points){
+        score -= points;
+        console.log(`-${points} pts`);
+    }
+    function getScore(){
+        return score;
+    }
+    return {increaseScore, decreaseScore, getScore};
+}
+const game = createGame();
+game.increaseScore(5);
+game.increaseScore(6);
+game.decreaseScore(3);
+console.log(`The final score is ${game.getScore()} pts`);
+
+
+/*setTimeout() - Function in Javascript that allows you to schedule the
+execution of a function after an amount of time (milliseconds)
+Times are approximate (varies based on the workload of the javascript
+runtime env.)
+setTimeout(callback, delay)
+clearTimeout(timeoutId) = can cancel a timeout before it triggers*/
+function sayHello(){
+    window.alert("Hello");
+}
+setTimeout(sayHello, 3000);
+
+setTimeout(function () {
+    window.alert("Goodbye");
+}, 5000);
+
+const timeoutId = setInterval(()=> window.alert("How are you?"), 9000);
+// clearTimeout(timeoutId);
+function startTimer(){
+    setTimeout(() => window.alert("Hey"), 1000);
+    console.log("STARTED");
+}
+function clearTimer(){
+    clearTimeout(timeoutId);
+    console.log("CLEARED");
+}
