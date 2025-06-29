@@ -1,0 +1,40 @@
+#hero{
+    background-image: url('images/giphy.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px 0 40px 0;
+    
+}
+body{
+    height: auto;
+    color: #759fbc;
+    text-align: center;
+    font-family: "Orbitron", system-ui;
+    /*font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+    margin: 0;
+}
+
+
+.btn{
+    padding: 5px 10px;
+    color:black;
+    background-color: aliceblue;
+    font-weight: 800;
+    font-family:inherit;
+    color: #759fbc;
+    border: none; 
+}
+
+.underline{
+    border-bottom: 4px solid white;
+}
+
+#logo{
+    width: 120px;
+}
+
+#title{
+    text-shadow: 0px 0px 4px black;
+    /* horizontal vertical blur color */
+}
