@@ -1732,3 +1732,69 @@ catch(error){
     console.error(error);
 }
 console.log("END!");
+
+
+/*DOM - Document Object Model
+Object{} that represents the page you see in the web browser and 
+provides you with an API to interact with it. 
+Web browser constructs the DOM when it loads an HTML document, 
+and structures all the elements in the tree-like representation. 
+Javascript can access the DOM to dynamically change the content, 
+structure, and style of a web page.*/
+document.title = "My Website";
+// document.body.style.backgroundColor = "hsl(0, 0%, 15%)";
+const user = "";
+const welcomeMsg = document.getElementById("welcome-msg");
+welcomeMsg.textContent += user === "" ? ` Guest` : username
+console.dir(document);
+// console.log(document);
+
+
+/*Element Selectors = Methods used to target and manipulate HTML 
+elements. They allow you to select one or multiple HTML elements 
+from the DOM (Document Object Model)
+1. document.getElementById()    // ELEMENT OR NULL
+2. document.getElementsClassName()  // HTML COLLECTION
+3. document.getElementsByTagName()  // HTML COLLECTION
+4. document.querySelector()  // ELEMENT OR NULL
+5. document.querySelectorAll()  // NODELIST  */
+const myHeading = document.getElementById("my-heading");
+myHeading.style.backgroundColor = "yellow";
+myHeading.style.textAlign = "center";
+console.log(myHeading);
+
+const fruits = document.getElementsByClassName("fruits");
+console.log(fruits);
+// fruits[0].style.backgroundColor = "yellow";
+// fruits[1].style.backgroundColor = "orange";
+for(let fruit of fruits){
+    fruit.style.backgroundColor = "skyblue";
+}
+Array.from(fruits).forEach(fruit => {
+    fruit.style.backgroundColor = "pink";
+});
+
+const h4Elements = document.getElementsByTagName("h4");
+const listItems = document.getElementsByTagName("li");
+// console.log(h4Elements);
+h4Elements[0].style.backgroundColor = "orange";
+h4Elements[1].style.backgroundColor = "lightgreen";
+// for(let h4Element of h4Elements){
+//     h4Element.style.backgroundColor = "orange";
+// }
+Array.from(h4Elements).forEach(h4Element => {
+    h4Element.style.backgroundColor = "skyblue";
+});
+for(let li of listItems){
+    li.style.backgroundColor = "lightgreen";
+}
+
+const element = document.querySelector(".fruits");
+element.style.backgroundColor = "purple";
+// first match is selected
+const food = document.querySelectorAll("li");
+food[4].style.backgroundColor = "hotpink";
+console.log(food);
+food.forEach(fd => {
+    fd.style.color = "darkblue";
+});
