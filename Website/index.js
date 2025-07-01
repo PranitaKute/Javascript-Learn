@@ -1798,3 +1798,51 @@ console.log(food);
 food.forEach(fd => {
     fd.style.color = "darkblue";
 });
+
+
+/*  DOM Navigation : The process of navigating through the structure 
+of an HTML document using JavaScript.
+.firstElementChild
+.lastElementChild
+.nextElementSibling
+.previousElementSibling
+.parentElement
+.children   */
+const element = document.getElementById("fruits");
+const firstChild = element.firstElementChild;
+// console.log(firstChild);
+firstChild.style.backgroundColor = "yellow";
+const vegetables = document.getElementById("vegetables");
+const lastElement = vegetables.lastElementChild;
+lastElement.style.backgroundColor = "darkorange";
+const desserts = document.getElementById("desserts");
+
+const ulElements = document.querySelectorAll("ul");
+ulElements.forEach(ulElements => {
+    const FirstChild = ulElements.firstElementChild;
+    FirstChild.style.backgroundColor = "skyblue";
+    const LastElement = ulElements.lastElementChild;
+    LastElement.style.backgroundColor = "lightgreen";
+});
+
+const ele = document.getElementById("potato");
+const sibling = ele.nextElementSibling;
+sibling.style.backgroundColor = "pink";
+const nxtSibling = ele.nextElementSibling;
+nxtSibling.style.backgroundColor = "blue";
+const prevSibling = ele.previousElementSibling;
+prevSibling.style.backgroundColor = "yellow";
+const parent = ele.parentElement;
+parent.style.backgroundColor = "brown";
+
+const elements = document.getElementById("vegetables");
+const nextSiblings = elements.nextElementSibling;
+nextSiblings.style.backgroundColor = "orange";
+const previousSiblings = elements.previousElementSibling;
+previousSiblings.style.backgroundColor = "crimson";
+const children = elements.children;
+// console.log(children);
+Array.from(children).forEach(child => {
+    child.style.backgroundColor = "lightblue";
+});
+// children[1].style.backgroundColor = "blue";
