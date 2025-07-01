@@ -1846,3 +1846,39 @@ Array.from(children).forEach(child => {
     child.style.backgroundColor = "lightblue";
 });
 // children[1].style.backgroundColor = "blue";
+
+
+/*  Add & change HTML 
+STEP 1 : Create the element
+STEP 2 : Add attributes/properties
+STEP 3 : Append element to DOM
+Remove HTML element   */
+const newH1 = document.createElement("h1");
+newH1.textContent = "I like pizza";
+newH1.id = "myH1";
+newH1.style.color = "tomato";
+newH1.style.textAlign = "center";
+// document.body.append(newH1);
+// document.body.prepend(newH1);
+document.getElementById("box1").append(newH1);
+// const box2 = document.getElementById("box2");
+// document.body.insertBefore(newH1, box2);
+
+// const boxes = document.querySelectorAll(".box");
+// document.body.insertBefore(newH1, boxes[2]);
+document.getElementById("box1").removeChild(newH1);
+
+const newListItems = document.createElement("li");
+newListItems.textContent = "Google";
+newListItems.id = "newListItems";
+newListItems.style.color = "blue";
+newListItems.style.fontWeight = "bold";
+newListItems.style.backgroundColor = "lightgreen";
+// document.body.append(newListItems);
+document.getElementById("companies").prepend(newListItems);
+const tcs = document.getElementById("tcs");
+document.getElementById("companies").insertBefore(newListItems, tcs);
+
+const listItems = document.querySelectorAll("#companies li");
+document.getElementById("companies").insertBefore(newListItems, listItems[1]);
+document.getElementById("companies").removeChild(newListItems);
