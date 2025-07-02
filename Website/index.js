@@ -1882,3 +1882,83 @@ document.getElementById("companies").insertBefore(newListItems, tcs);
 const listItems = document.querySelectorAll("#companies li");
 document.getElementById("companies").insertBefore(newListItems, listItems[1]);
 document.getElementById("companies").removeChild(newListItems);
+
+
+/* Mouse Events
+eventListener = Listen for specific events to create interactive web 
+pages events : click, mouseover, mouseout
+.addEventListener(event, callback) */
+const myBox = document.getElementById("myBox");
+const myButton = document.getElementById("myButton");
+
+myButton.addEventListener("click", event => {
+    // console.log(event);
+    myBox.style.backgroundColor = "tomato";
+    myBox.textContent = "OUCH! 🤕"
+});
+
+myButton.addEventListener("mouseover", event => {
+    myBox.style.backgroundColor = "yellow";
+    myBox.textContent = "Don't do it 😲";
+});
+
+myButton.addEventListener("mouseout", event =>{
+    myBox.style.backgroundColor = "lightgreen";
+    myBox.textContent = "Click Me 😉"
+});
+
+
+/*Key Events
+events : keydown, keyup*/
+const boxs = document.getElementById("boxs");
+
+document.addEventListener("keydown", event => {
+    // console.log(`key down = ${event.key}`);
+    boxs.textContent = "😲";
+    boxs.style.backgroundColor = "tomato";
+});
+document.addEventListener("keyup", event => {
+    // console.log(`Key up = ${event.key}`);
+    boxs.textContent = "😄";
+    boxs.style.backgroundColor = "lightblue";
+}); 
+
+const moveAmount = 10;
+let x = 0;  // Horizontal
+let y = 0;  // Vertical
+
+document.addEventListener("keydown", event => {
+    if(event.key.startsWith("Arrow")){
+        switch(event.key){
+            case "ArrowUp":
+                y -= moveAmount;
+                break;
+            case "ArrowDown":
+                y += moveAmount;
+                break;
+            case "ArrowLeft":
+                x -= moveAmount;
+                break;
+            case "ArrowRight":
+                x += moveAmount;
+                break;
+        }
+        boxs.style.top = `${y}px`;
+        boxs.style.left = `${x}px`;
+    }
+});
+
+
+/* Hide/show HTML */
+const button = document.getElementById("button");
+const myImg = document.getElementById("myImg");
+button.addEventListener("click", event => {
+    if(myImg.style.visibility === "hidden"){
+        myImg.style.visibility = "visible";
+        button.textContent = "HIDE";
+    }
+    else{
+        myImg.style.visibility = "hidden";
+        button.textContent = "SHOW";
+    }
+});
