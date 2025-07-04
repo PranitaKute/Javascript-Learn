@@ -2017,3 +2017,68 @@ buttons.forEach(button => {
         buttons = document.querySelectorAll(".mybtn");
     });
 });
+
+
+/* classList : Element property in javascript used to interact with an 
+element's list of classes (CSS classes)
+Allows you to make reusable classes for many elements across your webpage.*/
+// add()
+// remove()
+// toggle(Remove if present, Add if not)
+// replace(oldClass, newClass)
+// contains()
+const btn = document.getElementById("btn");
+const hOne = document.getElementById("hOne");
+// btn.classList.add("enabled");
+// btn.classList.remove("enabled");
+btn.addEventListener("mouseover", event =>{
+    event.target.classList.toggle("hover");
+});
+btn.addEventListener("mouseout", event =>{
+    event.target.classList.toggle("hover");
+});
+
+btn.classList.add("enabled");
+btn.addEventListener("click", event =>{
+    if(event.target.classList.contains("disabled")){
+        event.target.textContent += "🤡";
+    }
+    else{
+        event.target.classList.replace("enabled", "disabled");
+    }
+});
+
+hOne.classList.add("enabled");
+hOne.addEventListener("click", event =>{
+    if(event.target.classList.contains("disabled")){
+        event.target.textContent += "🤡";
+    }
+    else{
+        event.target.classList.replace("enabled", "disabled");
+    }
+});
+
+let b = document.querySelectorAll(".b");
+b.forEach(button => {
+    button.classList.add("enabled");
+});
+b.forEach(button => {
+    button.addEventListener("mouseover", event => {
+        event.target.classList.toggle("hover");
+    });
+});
+b.forEach(button => {
+    button.addEventListener("mouseout", event => {
+        event.target.classList.toggle("hover");
+    });
+});
+b.forEach(button => {
+    button.addEventListener("click", event => {
+        if(event.target.classList.contains("disabled")){
+            event.target.textContent += "👻";
+        }
+        else{
+            event.target.classList.replace("enabled", "disabled");
+        }
+    });
+});
