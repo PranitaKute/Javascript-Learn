@@ -2122,3 +2122,188 @@ task1(() => {
         });
     });
 });
+
+
+/* Promises - An object that manages asynchronous operations. 
+Wrap a Promise Object around {asynchronous code} 
+"I promise to return a value" 
+PENDING -> RESOLVED or REJECTED 
+new Promise((resolve, reject) => {asynchronous code})
+DO THESE CHORES IN ORDER
+1. WALK THE DOG
+2. CLEAN THE KITCHEN
+3. TAKE OUT THE TRASH
+function walkDog(){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const dogWalked = true;
+            if(dogWalked){
+                resolve("You walk the Dog!");
+            }
+            else{
+                reject("You didn't walk the dog");
+            }
+        }, 1500);   
+    });
+}
+function cleanKitchen(){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const kitchenCleaned = false;
+            if(kitchenCleaned){
+                resolve("You clean the kitchen");
+            }
+            else{
+                reject("You didn't clean the kitchen");
+            }
+        },2500);  
+    });
+}
+function takeOutTrash(){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const trashTakenOut = true;
+            if(trashTakenOut){
+                resolve("You take out the trash");
+            }
+            else{
+                reject("You didn't take out the trash");
+            }
+    }, 500);
+    })
+}
+walkDog().then(value => {console.log(value); return cleanKitchen()})
+        .then(value => {console.log(value); return takeOutTrash()})
+        .then(value => {console.log(value); 
+        console.log("All chores Done!")})
+        .catch(error => {console.error(error)});
+*/
+
+/* Async/Await 
+Async = Makes function return a promise
+Await = Makes an async function wait for a promise
+Allows you write asynchronous code in a synchronous manner
+Async doesn't have resolve or reject parameters
+Everything after Await is placed in an event queue 
+
+function walkDog(){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const dogWalked = true;
+            if(dogWalked){
+                resolve("You walk the Dog!");
+            }
+            else{
+                reject("You didn't walk the dog");
+            }
+        }, 1500);   
+    });
+}
+function cleanKitchen(){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const kitchenCleaned = false;
+            if(kitchenCleaned){
+                resolve("You clean the kitchen");
+            }
+            else{
+                reject("You didn't clean the kitchen");
+            }
+        },2500);  
+    });
+}
+function takeOutTrash(){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const trashTakenOut = true;
+            if(trashTakenOut){
+                resolve("You take out the trash");
+            }
+            else{
+                reject("You didn't take out the trash");
+            }
+    }, 500);
+    })
+}
+
+async function doChores() {
+    try{
+        const walkDogResult = await walkDog();
+        console.log(walkDogResult);
+
+        const cleanKitchenResult = await cleanKitchen();
+        console.log(cleanKitchenResult);
+
+        const trashOutResult = await takeOutTrash();
+        console.log(trashOutResult);
+
+        console.log("You finished all the chores!");
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+doChores();
+*/
+
+
+/*JSON - (Javascript Object Notation) data-interchange format 
+Used for exchanging data between a server and a web application 
+JSON files {key:value} OR [value1, value2, value3] array of values/objects 
+JSON.stringify() - converts a JS object to a JSON string.
+JSON.parse() - converts a JSON string to a JS object*/
+const names = ["Spongebob", "Patrick", "Squidward", "Sandy"];
+const jsonString = JSON.stringify(names);
+// console.log(names);
+console.log(jsonString);
+
+const person = {
+    "name" : "Spongebob",
+    "age" : 30, 
+    "isEmployed" : true,
+    "hobbies" : ["Jellyfishing", "Karate", "Cooking"]
+}
+const jsonString2 = JSON.stringify(person);
+// console.log(person);
+console.log(jsonString2);
+
+const people = [{
+    "name" : "Spongebob",
+    "age" : 30, 
+    "isEmployed" : true
+},
+{
+    "name" : "Patrick",
+    "age" : 34, 
+    "isEmployed" : false
+},
+{
+    "name" : "Squidward",
+    "age" : 50, 
+    "isEmployed" : true
+},
+{
+    "name" : "Sandy",
+    "age" : 27, 
+    "isEmployed" : false
+}]
+const jsonString3 = JSON.stringify(people);
+// console.log(people);
+console.log(jsonString3);
+
+const jsonNames = `["Spongebob", "Patrick", "Squidward", "Sandy"]`;
+const jsonPerson = `{"name" : "Spongebob", "age" : 30, "isEmployed" : true, "hobbies" : ["Jellyfishing", "Karate", "Cooking"]}`;
+const jsonPeople = `[{"name" : "Spongebob", "age" : 30, "isEmployed" : true},
+                    {"name" : "Patrick", "age" : 34, "isEmployed" : false},
+                    {"name" : "Squidward", "age" : 50, "isEmployed" : true},
+                    {"name" : "Sandy", "age" : 27, "isEmployed" : false}]`;
+const parsedData = JSON.parse(jsonNames);
+console.log(parsedData);
+
+fetch("person.json")
+    .then(response => response.json())
+    .then(value => console.log(value))
+fetch("people.json")
+    .then(response => response.json())
+    .then(values => values.forEach(value => console.log(value.isEmployed)))
+    .catch(error => console.error(error))
